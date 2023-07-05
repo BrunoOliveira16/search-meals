@@ -1,7 +1,7 @@
 <template>
-  <div class="w-[800px] mx-auto p-8">
+  <div class="max-w-[800px] mx-auto p-8">
     <h1 class="text-5xl font-bold mb-5">{{ meal.strMeal }}</h1>
-    <img :src="meal.strMealThumb" :alt="meal.strMeal">
+    <img :src="meal.strMealThumb" :alt="meal.strMeal" class="max-w-[100%']">
     <div class="grid grid-cols-1 sm:grid-cols-3 text-lg py-2">
       <div>
         <strong class="font-bold">Category:</strong> {{ meal.strCategory }}
@@ -40,7 +40,7 @@
         </ul>
       </div>
       <div class="mt-8">
-        <YoutubeButton :href="meal.strYoutube">YouTube</YoutubeButton>
+        <YouTubeButton :href="meal.strYoutube">YouTube</YouTubeButton>
         <a 
           :href="meal.strSource" 
           target="_blank" 
@@ -57,7 +57,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import axiosClient from '../axiosClient';
-import YoutubeButton from '../components/YoutubeButton.vue';
+import YouTubeButton from '../components/YouTubeButton.vue';
 
 const route = useRoute();
 const meal = ref({})
